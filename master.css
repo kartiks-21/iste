@@ -1,0 +1,749 @@
+*{
+  outline: none;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+body{
+  font-family: Segoe UI;
+  padding:0;
+  margin:0;
+}
+
+section{
+  min-height: 100vh;
+  padding-top: 70px;
+}
+
+h1{
+  font-variant: small-caps;
+}
+
+.nav{
+  z-index: 90;
+  background-color: #223;
+  width: 100%;
+  box-shadow: 0 0 20px rgba(0,0,0,0.50);
+  position: fixed;
+  top: 0;
+  justify-content: flex-end;
+  height: 50px;
+  display: none;
+  align-items: center;
+  padding: 0 20px;
+  animation: enter-top 0.5s ease forwards;
+}
+
+.nav h1{
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  flex-grow: 100;
+  color: white;
+  padding: 20px;
+  border: none;
+  font-size: 30px;
+  float: left;
+  transition-duration: 0.4s;
+}
+
+.nav h2{
+  display: none;
+  cursor: pointer;
+  position: absolute;
+  left: 20px;
+  top: 0px;
+  transform: translateY(-50%);
+  color: white;
+  padding: 20px;
+  border: none;
+  font-size: 25px;
+  float: left;
+  transition-duration: 0.4s;
+}
+
+@media only screen and (max-width: 1080px){
+  .nav h1{
+    display: none;
+  }
+  .nav h2{
+    display: flex;
+  }
+}
+
+@keyframes enter-top {
+  from{
+    opacity: 0;
+    top: -50px;
+  }
+  to{
+    opacity: 1;
+    top: 0;
+  }
+}
+
+.nav a{
+  display: flex;
+  font-family: Impact;
+  position: relative;
+  padding: 10px 30px;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: white;
+  height: 100%;
+  font-size: 25px;
+  font-weight: lighter;
+  justify-content: center;
+  align-items: center;
+  transition-duration: 0.2s;
+}
+
+.nav a:hover{
+  background-color: #334;
+  color: #afa;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
+.nav a:active{
+  box-shadow: 0 0 10px rgba(0,0,0,0.5) inset;
+}
+
+.landing{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: url("../images/landing-bg.jpg"), linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.9));
+  background-size: cover;
+  background-blend-mode: overlay;
+  background-position: center;
+  color: white;
+}
+
+.landing .row{
+  display: flex;
+  padding: 0;
+  flex-direction: row;
+}
+.landing a{
+  display: flex;
+  width: 180px;
+  position: relative;
+  padding: 10px 20px;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: white;
+  background: #00994d;
+  height: 100%;
+  font-size: 25px;
+  font-weight: normal;
+  justify-content: center;
+  align-items: center;
+  transition-duration: 0.2s;
+  animation: enter-bottom 2s ease-out forwards;
+  margin: 10px;
+  border: 2px solid #00994d;
+}
+
+@keyframes enter-bottom {
+  from{
+    opacity: 0;
+    bottom: -50px;
+  }
+  50%{
+    opacity: 0;
+    bottom: -50px;
+  }
+  to{
+    opacity: 1;
+    bottom: 0;
+  }
+}
+
+.landing a:hover{
+  border: 2px solid white;
+}
+
+.landing a:active{
+  background-color: #004d26;
+  border: 2px solid black;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5) inset;
+}
+
+.landing img{
+  position: relative;
+  height: 30vh;
+}
+
+.landing .heading{
+  margin: 30px;
+  position: relative;
+  font-size: 30px;
+  animation-name: heading-anim;
+  animation-timing-function: ease;
+  animation-duration: 2s;
+}
+
+.landing img{
+  animation-name: logo-bottom;
+  animation-timing-function: ease-out;
+  animation-duration: 2s;
+}
+
+.landing .down{
+  position: absolute;
+  width: 100%;
+  height: 0;
+  padding: 10px;
+  color: white;
+  bottom: 10px;
+  background: none;
+  font-size: 30px;
+  animation-duration: 1s;
+  border: none;
+  margin: 0;
+  animation: fade-in 2s ease-out forwards, bounce 1s ease infinite;
+}
+
+.landing .down:hover{
+  border: none;
+  background: none;
+  opacity: 0.5;
+}
+
+.landing .down:active{
+  border: none;
+  background: none;
+  opacity: 0;
+}
+
+.about{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 70px 20px 20px 20px;
+  background: url('../images/white-bg.jpg'), rgba(255,255,255, 0.5);
+  background-size: cover;
+  background-blend-mode: overlay;
+  color: gray;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.about h1{
+  color: black;
+  font-weight: normal;
+  font-size: 25px;
+  padding: 5px 10px;
+  border-bottom: 2px solid orange;
+}
+
+.about .quote{
+  display: flex;
+  color: gray;
+  text-align: center;
+  width: 60%;
+}
+
+.about .container{
+  padding: 30px 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  font-size: 20px;
+  height: 100%;
+}
+
+.about h2{
+  color: black;
+  border-bottom: 2px solid red;
+  font-size: 25px;
+  padding: 10px;
+  margin: 0 0 10px 0;
+  text-align: left;
+}
+
+.about .left{
+  position: relative;
+  display: flex;
+  width: 90%;
+  text-align: left;
+  flex-direction: row;
+  margin: 25px 0;
+  background: #eee;
+}
+
+.about .right{
+  position: relative;
+  display: flex;
+  width: 90%;
+  margin: 25px 0;
+  text-align: left;
+  flex-direction: row-reverse;
+  background: #eee;
+}
+
+@media only screen and (max-width: 1080px) {
+  .left .container{
+    background: url(../images/mission.jpg), rgba(0,0,0,0.7);
+  }
+  .right .container{
+    background: url(../images/vision.jpg), rgba(0,0,0,0.7);
+  }
+  .about .container{
+    color: white;
+    background-size: cover;
+    background-blend-mode: overlay;
+    background-position: center;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+  }
+  .about h2{
+    color: white;
+  }
+  .about .image-card{
+    display: none;
+  }
+}
+
+.image-card{
+  position: relative;
+  display: flex;
+  padding: 0;
+  flex-direction: column;
+}
+
+.about .image-card{
+    flex: 0 0 30%;
+}
+
+.animation .animate{
+  animation: enter-left 2s ease-out forwards;
+}
+
+.image-card img{
+  width: 100%;
+}
+
+.image-card .caption{
+  margin-top: 10px;
+  display: flex;
+  padding: 10px;
+  font-size: 30px;
+  align-content: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.team{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 70px 20px 20px 20px;
+  background: #444;
+  background-size: cover;
+  background-blend-mode: overlay;
+  color: #eee;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.team img{
+  border-radius: 100%;
+}
+
+.team h1{
+  color: white;
+  font-size: 36px;
+  font-weight: normal;
+}
+
+.team .row{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.row .image-card{
+  flex: 0 0 12%;
+  margin: 20px 50px;
+}
+
+.events{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 48px 0px 0px 0px;
+  background: white;
+  background-size: cover;
+  justify-content: center;
+  background-blend-mode: overlay;
+  color: grey;
+  flex-direction: row;
+  flex-wrap: wrap;
+  height: 100vh;
+}
+
+.events h1{
+  position: absolute;
+  top: 0px;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  color: grey;
+  display: flex;
+  align-items: center;
+  height: 50px;
+}
+
+.events .event{
+  position: relative;
+  background-color: red;
+  display: flex;
+  margin: 0;
+  width: 33.333%;
+  height: 33.333%;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  border: 3px solid rgba(0,0,0,0.5);
+  transition-duration: 0.5s;
+}
+
+.event:hover{
+  box-shadow: 0 0 30px rgba(255,255,255,0.5);
+  z-index: 50;
+  transition-duration: 0.5s;
+}
+
+.event:active{
+  box-shadow: 0 0 10px rgba(0,0,0,0.5) inset;
+}
+
+.event img{
+  margin: 0;
+  position: absolute;
+  width: 100%;
+}
+
+.event .brief{
+  cursor: pointer;
+  display: flex;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  background-color: rgba(0,0,30,0.5);
+  justify-content: center;
+  align-items: center;
+  font-size: 36px;
+  transition-duration: 0.3s;
+  color: white;
+}
+
+.event .brief:hover{
+  opacity: 1;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
+.event .details-container{
+  display: none;
+  z-index: 95;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.7);
+  align-items: center;
+  justify-content: center;
+  animation: fade-in 0.5s ease forwards;
+}
+
+.details-container .pop-up{
+  z-index: 100;
+  position: relative;
+  display: flex;
+  background-color: white;
+  color: #444;
+  flex-direction: column;
+  width: 60%;
+  height: 80%;
+  border: none;
+  padding: 30px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.7);
+  animation: grow 0.5s ease forwards;
+}
+
+.details-container.exit{
+  animation: fade-in 0.5s ease reverse;
+}
+
+@keyframes grow {
+  from{
+    transform: scale(0);
+  }
+  to{
+    transform: scale(1);
+  }
+}
+
+.pop-up .cross{
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+  font-weight: 400;
+  position: absolute;
+  float: right;
+  font-size: 30px;
+  color: red;
+  display: flex;
+  top: 20px;
+  right: 20px;
+}
+
+.pop-up img{
+  position: relative;
+  width: 50%;
+  margin: 0;
+}
+
+.pop-up h1{
+  position: relative;
+  display: flex;
+  color: black;
+  font-size: 30px;
+}
+.pop-up h2{
+  position: relative;
+  display: flex;
+  color: grey;
+  font-size: 20px;
+  font-weight: normal;
+}
+
+@media only screen and (max-width: 1080px) {
+  .events .event{
+    width: 100%;
+    height: 11.111%;
+  }
+
+  .events{
+    height: 450vh;
+  }
+
+  .details-container .pop-up{
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.contact{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 70px 20px 20px 20px;
+  background: white;
+  background-size: cover;
+  background-blend-mode: overlay;
+  color: #444;
+  justify-content: flex-start;
+  align-items: center;
+  height: auto;
+}
+
+.contact h1{
+  padding: 10px 20px;
+  border-bottom: 2px solid purple;
+  font-size: 36px;
+}
+
+.contact .row{
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+  height: 100%;
+}
+
+.contact .col{
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex: 1 1 0;
+}
+
+.contact h2{
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 25px;
+}
+
+.contact i{
+  font-size: 100px;
+  color: #ff00ff;
+  margin: 20px;
+}
+
+footer{
+  display: flex;
+  position: relative;
+  background-color: #222;
+  padding: 20px 50px;
+  height: 450px;
+  justify-content: center;
+  border-bottom: 30px solid black;
+}
+
+footer .col{
+  flex: 0 0 30%;
+  height: 100%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  text-align: justify;
+  color: lightgrey;
+  align-items: left;
+}
+
+footer .details{
+  display: block;
+}
+
+
+footer .col img{
+  width: 50%;
+  margin: 10px;
+}
+
+@media only screen and (max-width: 1080px){
+  footer .col{
+    flex: 0 0 40%;
+  }
+  footer .details{
+    display: none;
+  }
+  footer .col img{
+    width: 100%;
+  }
+}
+
+footer .row{
+  display: flex;
+  flex-direction: row;
+}
+
+footer a{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  font-size: 22px;
+  text-decoration: none;
+  color: white;
+  background-color: #333;
+  margin: 10px;
+}
+
+footer a:hover{
+  background-color: #444;
+}
+
+footer a:active{
+  background-color: #335;
+}
+
+footer .copyright{
+  position: absolute;
+  padding: 10px;
+  color: lightgrey;
+  bottom: 10px;
+  right: 10px;
+}
+
+footer .col h2{
+  width: 100%;
+  padding: 10px 0;
+  font-size: 25px;
+  border-bottom: 2px solid #555;
+}
+
+@media only screen and (max-width: 1080px){
+  .row .image-card{
+    flex: 0 0 60%;
+  }
+}
+
+@keyframes enter-left {
+  from{
+    left: -25px;
+    opacity; 0;
+  }
+  to{
+    left: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in {
+  from{
+    opacity: 0;
+  }
+  to{
+    opacity: 1;
+  }
+}
+
+@keyframes bounce {
+    from{
+      transform: translateY(0);
+    }
+    50%{
+      transform: translateY(-25px);
+    }
+    to{
+      transform: translateY(0);
+    }
+}
+
+@keyframes heading-anim {
+  from{
+    transform: scale(0);
+  }
+  50%{
+    bottom: -100px;
+    transform: scale(0);
+  }
+  to{
+    bottom: 0;
+    transform: scale(1);
+  }
+}
+
+@keyframes logo-bottom {
+  from{
+    opacity: 0;
+    transform: scale(2);
+    bottom: -25px;
+  }
+  50%{
+    opacity: 1;
+    transform: scale(2);
+    bottom: 0;
+  }
+  to{
+    opacity: 1;
+    transform: scale(1);
+    bottom: 0;
+  }
+}
